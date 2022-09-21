@@ -1,0 +1,97 @@
+---
+title: "dummy"
+author: "K.Anoban"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+'---
+title: "dummy"      
+author: "K.Anoban"     
+date: "`r Sys.Date()`"      
+output: html_document        
+---'
+
+#### **The above chunk is a YAML syntax!!! Note the key:value pairs!!**  
+**This section is designated for metadata!**
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# This is a dummy analysys of COVID 19 dataset
+```{r, echo = TRUE}
+data <- read.csv("D:/Covid/covid-data.csv")
+object.size(data)
+```
+```{r}
+89981528/(1024^2)
+```
+Loaded data appears to be 85 MiBs in size!
+```{r}
+data |> colnames()
+```
+```{r, echo = TRUE}
+data |> subset(continent == "Asia", select = c(new_cases, new_deaths)) |> summary()
+```
+```{r, echo = TRUE}
+unique(data$continent)
+```
+```{r}
+library(ggplot2)
+oceania <- data |> 
+    subset(continent == "Oceania", select = c(location, new_deaths, new_cases, date)) |> 
+    transform(date = as.Date(strptime(date, "%Y-%m-%d"))) |> 
+    subset(!is.na(location) & !is.na(new_deaths) & !is.na(new_cases), !is.na(date))
+head(oceania, 5)
+```
+
+```{r}
+object.size(oceania)
+```
+
+```{r}
+150776/(1024^2)
+```
+
+```{r}
+range(oceania$date)
+```
+
+```{r}
+oceania |> ggplot(aes(x = date, col = location)) +
+    geom_point(aes(y = new_deaths)) +
+    ggtitle("Daily deaths caused by COVID 19 in Oceania from March 2020 to March 2022") +
+    ylab("Deaths") +
+    xlab("Date") + 
+    theme_bw()
+```      
+```{r}
+oceania |> ggplot(aes(x = date, col = location)) +
+    geom_point(aes(y = new_cases)) +
+    scale_y_log10() +
+    ggtitle("Daily new COPVID 19 cases in Oceania from March 2020 to March 2022") +
+    ylab("New cases") +
+    xlab("Date") +
+    theme_bw()
+```     
+
+### **There appears to be oscillating peaks in new cases in most countries in Oceania!**   
+**The trend is not an overall decline as one would have expected but a rather slow rise with occassional spikes!**    
+```{r, fig.align='center', fig.height=8, fig.width=10}
+oceania |> ggplot(aes(x = location, y = new_deaths, fill = location)) +
+    geom_boxplot() +
+    scale_y_log10() +
+    ylab("New deaths (log10)") +
+    xlab("Country") +
+    theme(axis.text.x = element_text(angle = 90)) 
+```
+
+One can include lists in R markdown docs! Here's an example!   
+
+* Element 1
+* Element 2
+* Element 3
+* Element 4
+

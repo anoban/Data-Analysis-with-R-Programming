@@ -1,0 +1,381 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={dummy},
+  pdfauthor={K.Anoban},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{dummy}
+\author{K.Anoban}
+\date{2022-05-14}
+
+\begin{document}
+\maketitle
+
+`--- title: ``dummy''\\
+author: ``K.Anoban''\\
+date: ``2022-05-14''\\
+output: html\_document\\
+---'
+
+\hypertarget{the-above-chunk-is-a-yaml-syntax-note-the-keyvalue-pairs}{%
+\paragraph{\texorpdfstring{\textbf{The above chunk is a YAML syntax!!!
+Note the key:value
+pairs!!}}{The above chunk is a YAML syntax!!! Note the key:value pairs!!}}\label{the-above-chunk-is-a-yaml-syntax-note-the-keyvalue-pairs}}
+
+\textbf{This section is designated for metadata!}
+
+\hypertarget{this-is-a-dummy-analysys-of-covid-19-dataset}{%
+\section{This is a dummy analysys of COVID 19
+dataset}\label{this-is-a-dummy-analysys-of-covid-19-dataset}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"D:/Covid/covid{-}data.csv"}\NormalTok{)}
+\FunctionTok{object.size}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 89981528 bytes
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{89981528}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1024}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 85.81307
+\end{verbatim}
+
+Loaded data appears to be 85 MiBs in size!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\SpecialCharTok{|}\ErrorTok{\textgreater{}} \FunctionTok{colnames}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "iso_code"                                  
+##  [2] "continent"                                 
+##  [3] "location"                                  
+##  [4] "date"                                      
+##  [5] "total_cases"                               
+##  [6] "new_cases"                                 
+##  [7] "new_cases_smoothed"                        
+##  [8] "total_deaths"                              
+##  [9] "new_deaths"                                
+## [10] "new_deaths_smoothed"                       
+## [11] "total_cases_per_million"                   
+## [12] "new_cases_per_million"                     
+## [13] "new_cases_smoothed_per_million"            
+## [14] "total_deaths_per_million"                  
+## [15] "new_deaths_per_million"                    
+## [16] "new_deaths_smoothed_per_million"           
+## [17] "reproduction_rate"                         
+## [18] "icu_patients"                              
+## [19] "icu_patients_per_million"                  
+## [20] "hosp_patients"                             
+## [21] "hosp_patients_per_million"                 
+## [22] "weekly_icu_admissions"                     
+## [23] "weekly_icu_admissions_per_million"         
+## [24] "weekly_hosp_admissions"                    
+## [25] "weekly_hosp_admissions_per_million"        
+## [26] "total_tests"                               
+## [27] "new_tests"                                 
+## [28] "total_tests_per_thousand"                  
+## [29] "new_tests_per_thousand"                    
+## [30] "new_tests_smoothed"                        
+## [31] "new_tests_smoothed_per_thousand"           
+## [32] "positive_rate"                             
+## [33] "tests_per_case"                            
+## [34] "tests_units"                               
+## [35] "total_vaccinations"                        
+## [36] "people_vaccinated"                         
+## [37] "people_fully_vaccinated"                   
+## [38] "total_boosters"                            
+## [39] "new_vaccinations"                          
+## [40] "new_vaccinations_smoothed"                 
+## [41] "total_vaccinations_per_hundred"            
+## [42] "people_vaccinated_per_hundred"             
+## [43] "people_fully_vaccinated_per_hundred"       
+## [44] "total_boosters_per_hundred"                
+## [45] "new_vaccinations_smoothed_per_million"     
+## [46] "new_people_vaccinated_smoothed"            
+## [47] "new_people_vaccinated_smoothed_per_hundred"
+## [48] "stringency_index"                          
+## [49] "population"                                
+## [50] "population_density"                        
+## [51] "median_age"                                
+## [52] "aged_65_older"                             
+## [53] "aged_70_older"                             
+## [54] "gdp_per_capita"                            
+## [55] "extreme_poverty"                           
+## [56] "cardiovasc_death_rate"                     
+## [57] "diabetes_prevalence"                       
+## [58] "female_smokers"                            
+## [59] "male_smokers"                              
+## [60] "handwashing_facilities"                    
+## [61] "hospital_beds_per_thousand"                
+## [62] "life_expectancy"                           
+## [63] "human_development_index"                   
+## [64] "excess_mortality_cumulative_absolute"      
+## [65] "excess_mortality_cumulative"               
+## [66] "excess_mortality"                          
+## [67] "excess_mortality_cumulative_per_million"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{data }\SpecialCharTok{|}\ErrorTok{\textgreater{}} \FunctionTok{subset}\NormalTok{(continent }\SpecialCharTok{==} \StringTok{"Asia"}\NormalTok{, }\AttributeTok{select =} \FunctionTok{c}\NormalTok{(new\_cases, new\_deaths)) }\SpecialCharTok{|}\ErrorTok{\textgreater{}} \FunctionTok{summary}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    new_cases        new_deaths     
+##  Min.   :     0   Min.   :   0.00  
+##  1st Qu.:    13   1st Qu.:   0.00  
+##  Median :   254   Median :   3.00  
+##  Mean   :  3465   Mean   :  42.64  
+##  3rd Qu.:  1543   3rd Qu.:  21.00  
+##  Max.   :414188   Max.   :4529.00  
+##  NA's   :591      NA's   :4401
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{unique}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{continent)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "Asia"          ""              "Europe"        "Africa"       
+## [5] "North America" "South America" "Oceania"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{oceania }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+    \FunctionTok{subset}\NormalTok{(continent }\SpecialCharTok{==} \StringTok{"Oceania"}\NormalTok{, }\AttributeTok{select =} \FunctionTok{c}\NormalTok{(location, new\_deaths, new\_cases, date)) }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+    \FunctionTok{transform}\NormalTok{(}\AttributeTok{date =} \FunctionTok{as.Date}\NormalTok{(}\FunctionTok{strptime}\NormalTok{(date, }\StringTok{"\%Y{-}\%m{-}\%d"}\NormalTok{))) }\SpecialCharTok{|}\ErrorTok{\textgreater{}} 
+    \FunctionTok{subset}\NormalTok{(}\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(location) }\SpecialCharTok{\&} \SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(new\_deaths) }\SpecialCharTok{\&} \SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(new\_cases), }\SpecialCharTok{!}\FunctionTok{is.na}\NormalTok{(date))}
+\FunctionTok{head}\NormalTok{(oceania, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##       location new_deaths new_cases       date
+## 9016 Australia          1         2 2020-03-01
+## 9017 Australia          0         3 2020-03-02
+## 9018 Australia          0         9 2020-03-03
+## 9019 Australia          1        13 2020-03-04
+## 9020 Australia          0         3 2020-03-05
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{object.size}\NormalTok{(oceania)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 150776 bytes
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{150776}\SpecialCharTok{/}\NormalTok{(}\DecValTok{1024}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.1437912
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{range}\NormalTok{(oceania}\SpecialCharTok{$}\NormalTok{date)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "2020-03-01" "2022-03-11"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{oceania }\SpecialCharTok{|}\ErrorTok{\textgreater{}} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ date, }\AttributeTok{col =}\NormalTok{ location)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ new\_deaths)) }\SpecialCharTok{+}
+    \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Daily deaths caused by COVID 19 in Oceania from March 2020 to March 2022"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{ylab}\NormalTok{(}\StringTok{"Deaths"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{xlab}\NormalTok{(}\StringTok{"Date"}\NormalTok{) }\SpecialCharTok{+} 
+    \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{dummy_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{oceania }\SpecialCharTok{|}\ErrorTok{\textgreater{}} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ date, }\AttributeTok{col =}\NormalTok{ location)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_point}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ new\_cases)) }\SpecialCharTok{+}
+    \FunctionTok{scale\_y\_log10}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{ggtitle}\NormalTok{(}\StringTok{"Daily new COPVID 19 cases in Oceania from March 2020 to March 2022"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{ylab}\NormalTok{(}\StringTok{"New cases"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{xlab}\NormalTok{(}\StringTok{"Date"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Transformation introduced infinite values in continuous y-axis
+\end{verbatim}
+
+\includegraphics{dummy_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\hypertarget{there-appears-to-be-oscillating-peaks-in-new-cases-in-most-countries-in-oceania}{%
+\subsubsection{\texorpdfstring{\textbf{There appears to be oscillating
+peaks in new cases in most countries in
+Oceania!}}{There appears to be oscillating peaks in new cases in most countries in Oceania!}}\label{there-appears-to-be-oscillating-peaks-in-new-cases-in-most-countries-in-oceania}}
+
+\textbf{The trend is not an overall decline as one would have expected
+but a rather slow rise with occassional spikes!}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{oceania }\SpecialCharTok{|}\ErrorTok{\textgreater{}} \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ location, }\AttributeTok{y =}\NormalTok{ new\_deaths, }\AttributeTok{fill =}\NormalTok{ location)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{scale\_y\_log10}\NormalTok{() }\SpecialCharTok{+}
+    \FunctionTok{ylab}\NormalTok{(}\StringTok{"New deaths (log10)"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{xlab}\NormalTok{(}\StringTok{"Country"}\NormalTok{) }\SpecialCharTok{+}
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{)) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Transformation introduced infinite values in continuous y-axis
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 3232 rows containing non-finite values (stat_boxplot).
+\end{verbatim}
+
+\begin{center}\includegraphics{dummy_files/figure-latex/unnamed-chunk-12-1} \end{center}
+
+One can include lists in R markdown docs! Here's an example!
+
+\begin{itemize}
+\tightlist
+\item
+  Element 1
+\item
+  Element 2
+\item
+  Element 3
+\item
+  Element 4
+\end{itemize}
+
+\end{document}
